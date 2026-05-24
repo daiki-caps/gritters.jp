@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | 株式会社Gritters</title>
+  <meta name="description" content="株式会社Grittersについて。ミッション・ビジョン・バリュー、会社概要。やり切る人間を増やすために、渋谷から動き続ける。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gritters.jp/about">
+  <meta property="og:title" content="About | 株式会社Gritters">
+  <meta property="og:description" content="やり切る人間を増やすために、渋谷から動き続ける。株式会社Grittersの想いと会社概要。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gritters.jp/about">
+  <meta property="og:image" content="https://gritters.jp/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About | 株式会社Gritters">
+  <meta name="twitter:image" content="https://gritters.jp/ogp.png">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #0C0C0B;
+      --text:   #F5F2EC;
+      --muted:  rgba(245,242,236,0.88);
+      --dim:    rgba(245,242,236,0.60);
+      --faint:  rgba(245,242,236,0.35);
+      --border: rgba(240,236,228,0.10);
+      --accent: #C8A96E;
+      --serif:  'Noto Serif JP', serif;
+      --mono:   'DM Mono', 'SF Mono', monospace;
+      --sans:   -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      cursor: none;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── カスタムカーソル ── */
+    .cursor {
+      position: fixed; width: 8px; height: 8px;
+      background: var(--text); border-radius: 50%;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s, height 0.2s;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      position: fixed; width: 36px; height: 36px;
+      border: 1px solid rgba(245,242,236,0.35); border-radius: 50%;
+      pointer-events: none; z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width 0.25s, height 0.25s;
+    }
+    @media (hover: none) { .cursor, .cursor-ring { display: none; } body { cursor: auto; } }
+
+    /* ── NAV ── */
+    nav {
+      display: flex; align-items: center;
+      padding: 20px 52px;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0;
+      background: rgba(12,12,11,0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      z-index: 100;
+      transition: padding 0.3s;
+    }
+    nav.scrolled { padding: 14px 52px; }
+    .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.22em; color: var(--text); }
+    .nav-links { display: flex; gap: 32px; align-items: center; margin-left: auto; margin-right: 24px; }
+    .nav-links a { font-size: 13px; color: var(--dim); letter-spacing: 0.06em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-cta {
+      display: inline-flex; align-items: center;
+      font-size: 13px; font-weight: 500;
+      background: var(--text); color: #0C0C0B;
+      padding: 8px 20px; border-radius: 2px;
+      letter-spacing: 0.04em;
+      transition: background 0.12s, transform 0.1s;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+    }
+    .nav-cta:hover { background: #e8e4dc; }
+    .nav-cta:active { transform: translateY(2px); box-shadow: none; background: #d4d0c8; }
+
+    /* ハンバーガー */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      margin-left: auto; cursor: pointer; padding: 4px;
+      background: none; border: none;
+    }
+    .nav-hamburger span { display: block; width: 22px; height: 1px; background: var(--text); transition: transform 0.25s, opacity 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .nav-drawer {
+      display: none; flex-direction: column;
+      background: rgba(12,12,11,0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 61px; z-index: 99;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a { font-size: 15px; color: var(--muted); padding: 18px 24px; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .nav-drawer a:hover { color: var(--text); }
+
+    /* ── SHARED ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 13px; font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 36px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after {
+      content: ''; display: block;
+      width: 40px; height: 1px;
+      background: var(--accent); opacity: 0.4;
+    }
+
+    /* ── PAGE HERO ── */
+    #page-hero {
+      padding: 96px 52px 80px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    #page-hero::before {
+      content: 'ABOUT';
+      position: absolute;
+      right: 40px; top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--mono);
+      font-size: clamp(80px, 10vw, 140px);
+      font-weight: 400;
+      color: rgba(245,242,236,0.03);
+      letter-spacing: 0.2em;
+      pointer-events: none;
+      user-select: none;
+    }
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px; color: var(--accent);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards;
+    }
+    .page-title {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 500;
+      line-height: 1.2;
+      max-width: 700px;
+      opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards;
+    }
+    .page-sub {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.9; max-width: 560px;
+      margin-top: 24px;
+      opacity: 0; animation: fadeUp 0.6s ease 0.35s forwards;
+    }
+
+    /* ── MVV ── */
+    #mvv { padding: 96px 52px; border-bottom: 1px solid var(--border); }
+
+    .mvv-block {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .mvv-block:first-child { padding-top: 0; }
+    .mvv-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .mvv-label {
+      font-family: var(--mono);
+      font-size: 11px; color: var(--accent);
+      letter-spacing: 0.20em; text-transform: uppercase;
+      padding-top: 6px;
+      position: relative;
+    }
+    .mvv-label::after {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+      margin-top: 10px; opacity: 0.5;
+    }
+
+    .mvv-content {}
+    .mvv-heading {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .mvv-body {
+      font-size: 15px; color: var(--muted);
+      line-height: 2.0; max-width: 560px;
+    }
+
+    /* GRIT バリュー */
+    .grit-block {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      padding: 48px 0 0;
+      align-items: start;
+    }
+    .grit-word {
+      font-family: var(--serif);
+      font-size: clamp(52px, 6vw, 80px);
+      font-weight: 500;
+      line-height: 1;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .grit-body {
+      font-size: 15px; color: var(--muted);
+      line-height: 2.0; max-width: 560px;
+    }
+
+    /* ── 会社概要 ── */
+    #company { padding: 96px 52px; border-bottom: 1px solid var(--border); }
+
+    .company-table { border-top: 1px solid var(--border); }
+    .company-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .company-key {
+      font-family: var(--mono);
+      font-size: 13px; color: var(--dim);
+      letter-spacing: 0.06em; padding-top: 2px;
+    }
+    .company-val { font-size: 15px; color: var(--muted); line-height: 1.8; }
+    .company-val a { color: var(--accent); border-bottom: 1px solid rgba(200,169,110,0.3); transition: border-color 0.2s; }
+    .company-val a:hover { border-color: var(--accent); }
+
+    /* ── CTA ── */
+    #cta {
+      padding: 96px 52px;
+      border-bottom: none;
+    }
+    .cta-heading {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 500; line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .cta-sub { font-size: 15px; color: var(--muted); margin-bottom: 40px; line-height: 1.85; max-width: 420px; }
+    .cta-btn {
+      display: inline-block;
+      font-size: 13px; font-weight: 500;
+      background: var(--text); color: #0C0C0B;
+      padding: 14px 36px; border-radius: 2px;
+      letter-spacing: 0.04em;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+      transition: background 0.12s, transform 0.1s;
+    }
+    .cta-btn:hover { background: #e8e4dc; }
+    .cta-btn:active { transform: translateY(2px); box-shadow: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 52px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+    }
+    .footer-logo { font-size: 13px; font-weight: 500; letter-spacing: 0.20em; color: var(--muted); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--dim); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+    /* ── アニメーション ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .fade.in { opacity: 1; transform: none; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav { padding: 18px 32px; }
+      #page-hero, #mvv, #company, #cta { padding-left: 32px; padding-right: 32px; }
+      footer { padding: 24px 32px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      #page-hero { padding: 72px 20px 56px; }
+      #mvv, #company, #cta { padding: 56px 20px; }
+
+      .mvv-block { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+      .mvv-label::after { display: none; }
+      .grit-block { grid-template-columns: 1fr; gap: 16px; }
+
+      .company-row { grid-template-columns: 120px 1fr; gap: 16px; }
+
+      footer { flex-direction: column; gap: 14px; text-align: center; padding: 20px; }
+      .footer-links { justify-content: center; flex-wrap: wrap; }
+
+      #page-hero::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="main-nav">
+    <a href="/" class="logo">GRITTERS</a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#news">News</a>
+      <a href="/about" class="active">About</a>
+    </div>
+    <a href="/#contact" class="nav-cta">お問い合わせ</a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <nav class="nav-drawer" id="nav-drawer">
+    <a href="/#services" onclick="closeMenu()">Services</a>
+    <a href="/#news" onclick="closeMenu()">News</a>
+    <a href="/about" onclick="closeMenu()">About</a>
+    <a href="/#contact" onclick="closeMenu()" style="color: var(--accent);">お問い合わせ</a>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section id="page-hero">
+      <p class="page-eyebrow">About</p>
+      <h1 class="page-title">やり切ることが、<br>すべての出発点だ。</h1>
+      <p class="page-sub">情報が溢れ、機会は増えた。それでも、やり切れない人間の数は変わらない。Grittersは、その現実に向き合い続ける会社だ。</p>
+    </section>
+
+    <!-- MISSION / VISION / VALUE -->
+    <section id="mvv" aria-labelledby="mvv-heading">
+      <h2 id="mvv-heading" class="section-label fade">Mission &amp; Vision</h2>
+
+      <div class="mvv-block fade">
+        <div class="mvv-label">Mission</div>
+        <div class="mvv-content">
+          <p class="mvv-heading">やり切る人間を、<br>増やす。</p>
+          <p class="mvv-body">やりたいことがある。でも続かない。最後まで走り切れない。その悔しさを、Grittersは知っている。コミュニティ・機会・テクノロジーを手段に、やり切れる人間と環境を、一つずつ積み上げていく。</p>
+        </div>
+      </div>
+
+      <div class="mvv-block fade">
+        <div class="mvv-label">Vision</div>
+        <div class="mvv-content">
+          <p class="mvv-heading">有限を、更新する。</p>
+          <p class="mvv-body">時間は有限だ。体力も、集中力も。だが、その限界はまだ書き換えられる。やり切る人間が増えた先に、「やり切れる時間」そのものを拡張する世界をつくる。それがGrittersの描く未来だ。</p>
+        </div>
+      </div>
+
+      <div class="grit-block fade">
+        <div class="mvv-label">Value</div>
+        <div class="mvv-content">
+          <p class="grit-word">GRIT</p>
+          <p class="grit-body">情熱と粘り強さ。華やかな才能より、諦めない意志を。Grittersが大切にするのは、ただ一つ——やり切る力だ。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 会社概要 -->
+    <section id="company" aria-labelledby="company-heading">
+      <h2 id="company-heading" class="section-label fade">Company</h2>
+      <div class="company-table fade">
+        <div class="company-row">
+          <span class="company-key">会社名</span>
+          <span class="company-val">株式会社Gritters</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">設立</span>
+          <span class="company-val">2026年5月</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">代表取締役</span>
+          <span class="company-val">清田大貴</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">資本金</span>
+          <span class="company-val">250万円</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">所在地</span>
+          <span class="company-val">〒150-0043 東京都渋谷区道玄坂1丁目10番8号<br>渋谷道玄坂東急ビル2F-C</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">事業内容</span>
+          <span class="company-val">インターンシップマッチング事業 / 学生コミュニティ運営 / 広告代理業 / 教育・人材育成事業</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">サービス</span>
+          <span class="company-val">
+            <a href="https://lp.gritters.jp" target="_blank" rel="noopener">Gritters Intern ↗</a>
+            &nbsp;&nbsp;
+            <a href="https://campanion.jp" target="_blank" rel="noopener">CAPS ↗</a>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+      <p class="cta-heading fade">共に、やり切る人間を増やしませんか。</p>
+      <p class="cta-sub fade">採用・提携・取材など、お気軽にご連絡ください。</p>
+      <a href="/#contact" class="cta-btn fade">お問い合わせ →</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-logo">GRITTERS</span>
+    <nav class="footer-links">
+      <a href="/">Top</a>
+      <a href="/#services">Services</a>
+      <a href="/#news">News</a>
+      <a href="/about">About</a>
+    </nav>
+    <span class="footer-copy">© 2026 株式会社Gritters</span>
+  </footer>
+
+  <script>
+    /* カスタムカーソル */
+    const cursor = document.getElementById('cursor');
+    const ring   = document.getElementById('cursorRing');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+      ring.style.left   = e.clientX + 'px'; ring.style.top   = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => { cursor.style.width = '16px'; cursor.style.height = '16px'; ring.style.width = '56px'; ring.style.height = '56px'; });
+      el.addEventListener('mouseleave', () => { cursor.style.width = '8px';  cursor.style.height = '8px';  ring.style.width = '36px'; ring.style.height = '36px'; });
+    });
+
+    /* スクロールNav */
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { mainNav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+    /* フェードイン */
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } }),
+      { threshold: 0.06 }
+    );
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+    /* モバイルメニュー */
+    function toggleMenu(btn) {
+      const open = btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      document.getElementById('nav-drawer').classList.toggle('open', open);
+    }
+    function closeMenu() {
+      const btn = document.querySelector('.nav-hamburger');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+      document.getElementById('nav-drawer').classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>

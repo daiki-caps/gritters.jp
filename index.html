@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社Gritters | やり切る人間を、増やす。</title>
+  <meta name="description" content="株式会社Grittersは、やり切る人間を増やすことをミッションに、学生コミュニティ「CAPS」と長期インターンマッチング「Gritters Intern」を運営します。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gritters.jp">
+
+  <!-- OGP -->
+  <meta property="og:title" content="株式会社Gritters | やり切る人間を、増やす。">
+  <meta property="og:description" content="株式会社Grittersは、やり切る人間を増やすことをミッションに、学生コミュニティ「CAPS」と長期インターンマッチング「Gritters Intern」を運営します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gritters.jp">
+  <meta property="og:image" content="https://gritters.jp/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="株式会社Gritters">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="株式会社Gritters | やり切る人間を、増やす。">
+  <meta name="twitter:description" content="株式会社Grittersは、やり切る人間を増やすことをミッションに、学生コミュニティ「CAPS」と長期インターンマッチング「Gritters Intern」を運営します。">
+  <meta name="twitter:image" content="https://gritters.jp/ogp.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "株式会社Gritters",
+    "alternateName": "GRITTERS",
+    "url": "https://gritters.jp",
+    "logo": "https://gritters.jp/images/favicon.png",
+    "image": "https://gritters.jp/ogp.png",
+    "description": "やり切る人間を増やすことをミッションに、学生コミュニティとインターンマッチング事業を運営。",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "道玄坂1丁目10番8号 渋谷道玄坂東急ビル2F-C",
+      "addressLocality": "渋谷区",
+      "addressRegion": "東京都",
+      "postalCode": "150-0043",
+      "addressCountry": "JP"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "清田大貴"
+    },
+    "sameAs": ["https://campanion.jp", "https://intern.gritters.jp", "https://lp.gritters.jp"]
+  }
+  </script>
+
+  <link rel="icon" href="./images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="./images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0C0C0B;
+      --bg2:      #111110;
+      --text:     #F5F2EC;
+      --muted:    rgba(245,242,236,0.88);
+      --dim:      rgba(245,242,236,0.60);
+      --faint:    rgba(245,242,236,0.35);
+      --border:   rgba(240,236,228,0.10);
+      --accent:   #C8A96E;                  /* アンバーアクセント */
+      --serif:    'Noto Serif JP', serif;
+      --mono:     'DM Mono', 'SF Mono', monospace;
+      --sans:     -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      cursor: none;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── カスタムカーソル ── */
+    .cursor {
+      position: fixed;
+      width: 8px; height: 8px;
+      background: var(--text);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1px solid rgba(240,236,228,0.35);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s ease, width 0.25s ease, height 0.25s ease, opacity 0.2s;
+    }
+    body:hover .cursor { opacity: 1; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 20px 52px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(12,12,11,0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      z-index: 100;
+      transition: padding 0.3s ease;
+    }
+    nav.scrolled { padding: 14px 52px; }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 24px;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--dim);
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--text);
+      color: #0C0C0B;
+      padding: 8px 20px;
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+      transition: background 0.12s, transform 0.1s, box-shadow 0.1s;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+    }
+    .nav-cta:hover {
+      background: #e8e4dc;
+    }
+    .nav-cta:active {
+      transform: translateY(2px);
+      box-shadow: 0 0px 0 rgba(0,0,0,0.4);
+      background: #d4d0c8;
+    }
+
+    /* ── ハンバーガー ── */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      margin-left: auto; cursor: pointer; padding: 4px;
+      background: none; border: none;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 1px;
+      background: var(--text);
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav-drawer {
+      display: none; flex-direction: column; gap: 0;
+      background: rgba(12,12,11,0.98);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 61px; z-index: 99;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-size: 15px; color: var(--muted);
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .nav-drawer a:hover { color: var(--text); }
+
+    /* ── SHARED ── */
+    section {
+      padding: 96px 52px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 0;
+      min-height: 100svh;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    /* 背景画像 */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(20%) brightness(0.75);
+      transform: scale(1.04);
+      animation: heroZoom 12s ease forwards;
+    }
+
+    /* グラデーションオーバーレイ */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right,
+          rgba(12,12,11,0.88) 0%,
+          rgba(12,12,11,0.70) 38%,
+          rgba(12,12,11,0.28) 65%,
+          rgba(12,12,11,0.05) 100%
+        ),
+        linear-gradient(to top,
+          rgba(12,12,11,0.5) 0%,
+          transparent 35%
+        );
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1.00); }
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 52px 100px;
+      position: relative;
+      z-index: 2;
+      max-width: 660px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.5vw, 68px);
+      font-weight: 500;
+      line-height: 1.14;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 2.0;
+      max-width: 400px;
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+
+    .btn-row {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 13px; font-weight: 500;
+      background: var(--text); color: var(--bg);
+      padding: 12px 28px; border-radius: 2px;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+    .btn-secondary {
+      display: inline-block;
+      font-size: 13px;
+      border: 1px solid rgba(240,236,228,0.22);
+      color: var(--muted); padding: 12px 28px; border-radius: 2px;
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* スクロールインジケーター */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 36px; left: 52px;
+      display: flex; align-items: center; gap: 12px;
+      font-family: var(--mono);
+      font-size: 10px; color: var(--dim);
+      letter-spacing: 0.14em;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 1.2s forwards;
+    }
+    .scroll-line {
+      width: 40px; height: 1px;
+      background: var(--dim);
+      position: relative; overflow: hidden;
+    }
+    .scroll-line::after {
+      content: '';
+      position: absolute; inset-y: 0; left: -100%;
+      width: 100%; background: var(--accent);
+      animation: scrollPulse 2s ease-in-out 1.5s infinite;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(200,169,110,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+    .service-card:hover {
+      border-color: rgba(200,169,110,0.35);
+      transform: translateY(-4px);
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .card-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .card-tags {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-family: var(--mono);
+      background: rgba(200,169,110,0.10);
+      border: 1px solid rgba(200,169,110,0.30);
+      padding: 4px 12px; border-radius: 2px;
+      color: rgba(200,169,110,0.90);
+      letter-spacing: 0.06em;
+    }
+
+    .card-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    .card-link {
+      font-size: 12px;
+      color: var(--dim);
+      font-family: var(--mono);
+      transition: color 0.2s;
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .card-link:hover { color: var(--accent); }
+
+    .card-link-label {
+      font-size: 12px;
+      font-family: var(--sans);
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── ABOUT ── */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 0;
+    }
+
+    .mv-type {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .mv-text {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.42;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .mv-sub {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.95;
+    }
+
+    /* ── 会社情報テーブル ── */
+    .company-table {
+      margin-top: 64px;
+      border-top: 1px solid var(--border);
+    }
+    .company-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .company-key {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      padding-top: 2px;
+    }
+    .company-val { color: var(--muted); }
+
+    /* ── NEWS ── */
+    .news-item {
+      display: grid;
+      grid-template-columns: 120px 100px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    .news-item:hover .news-title { color: var(--text); }
+    .news-item:hover .news-arrow { opacity: 1; transform: translateX(0); }
+
+    .news-date {
+      font-family: var(--mono);
+      font-size: 13px; color: var(--muted);
+    }
+    .news-cat {
+      font-size: 12px; color: var(--accent);
+      font-family: var(--mono);
+      letter-spacing: 0.08em;
+    }
+    .news-title {
+      font-size: 15px;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .news-arrow {
+      font-size: 12px; color: var(--accent);
+      opacity: 0; transform: translateX(-6px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .news-empty { font-size: 13px; color: var(--dim); padding: 24px 0; }
+
+    /* ── CONTACT ── */
+    #contact {
+      border-bottom: none;
+      padding: 96px 52px;
+    }
+
+    .cta-title {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    .cta-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 48px;
+      max-width: 420px;
+      line-height: 1.85;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 780px;
+    }
+
+    .contact-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px 24px;
+      transition: border-color 0.3s, transform 0.3s;
+      display: flex; flex-direction: column; gap: 10px;
+      position: relative; overflow: hidden;
+    }
+    .contact-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .contact-card:hover {
+      border-color: rgba(200,169,110,0.3);
+      transform: translateY(-3px);
+    }
+    .contact-card:hover::after { transform: scaleX(1); }
+
+    .contact-card-label {
+      font-family: var(--mono);
+      font-size: 12px; color: var(--accent);
+      letter-spacing: 0.10em; text-transform: uppercase;
+    }
+    .contact-card-title {
+      font-size: 16px; font-weight: 500; color: var(--text);
+    }
+    .contact-card-desc {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.75; flex: 1;
+    }
+    .contact-card-link {
+      font-family: var(--mono);
+      font-size: 13px; color: var(--muted);
+      transition: color 0.2s;
+    }
+    .contact-card:hover .contact-card-link { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 52px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-logo {
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.20em; color: var(--muted);
+    }
+
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 13px; color: var(--dim);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 12px; color: var(--faint);
+    }
+
+    /* ── アニメーション ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%   { left: -100%; }
+      50%  { left: 0%; }
+      100% { left: 100%; }
+    }
+    @keyframes grainAnim {
+      0%,100% { transform: translate(0,0); }
+      20%     { transform: translate(-2%,-1%); }
+      40%     { transform: translate(1%, 2%); }
+      60%     { transform: translate(-1%, 1%); }
+      80%     { transform: translate(2%, -2%); }
+    }
+
+    @media (hover: none) {
+      .cursor, .cursor-ring { display: none; }
+      body { cursor: auto; }
+    }
+      .fade {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .fade.in { opacity: 1; transform: none; }
+    }
+
+    /* ── RESPONSIVE ── */
+
+    /* タブレット */
+    @media (max-width: 1024px) {
+      nav { padding: 18px 32px; }
+      section { padding: 80px 32px; }
+      #contact { padding: 80px 32px; }
+      .hero-left { padding: 100px 32px 80px; max-width: 560px; }
+      .services-grid { gap: 12px; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+      footer { padding: 24px 32px; }
+    }
+
+    /* モバイル */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      nav.scrolled { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      #hero { min-height: 100svh; }
+      .hero-left { padding: 88px 20px 72px; max-width: 100%; }
+
+      h1 { font-size: clamp(36px, 10vw, 52px); }
+
+      section { padding: 56px 20px; }
+      #contact { padding: 56px 20px; }
+
+      .services-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { padding: 28px 24px; }
+
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px 0;
+      }
+      .news-cat { display: block; }
+      .news-arrow { display: none; }
+
+      .contact-grid { grid-template-columns: 1fr; max-width: 100%; }
+
+      footer { flex-direction: column; gap: 14px; text-align: center; padding: 20px; }
+      .footer-links { justify-content: center; flex-wrap: wrap; }
+
+      .scroll-indicator { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- カスタムカーソル -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="main-nav" aria-label="メインナビゲーション">
+    <a href="/" class="logo">GRITTERS</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#news">News</a>
+      <a href="/about">About</a>
+    </div>
+    <a href="#contact" class="nav-cta">お問い合わせ</a>
+    <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <nav class="nav-drawer" id="nav-drawer" aria-label="モバイルメニュー">
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#news" onclick="closeMenu()">News</a>
+    <a href="/about" onclick="closeMenu()">About</a>
+    <a href="#contact" onclick="closeMenu()" style="color: var(--accent);">お問い合わせ</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" aria-labelledby="hero-heading">
+
+      <!-- フルブリード背景画像 -->
+      <div class="hero-bg">
+        <img src="./images/hero.jpg" alt="">
+      </div>
+
+      <div class="hero-left">
+        <p class="hero-eyebrow">株式会社 Gritters</p>
+        <h1 id="hero-heading">やり切る人間を、<br>増やす。</h1>
+        <p class="hero-desc">情報革命が、機会への扉を開いた。次の問いは、その扉をやり切れる人間をどう増やすか。コミュニティ・機会・テクノロジーで、その答えをつくる。</p>
+        <div class="btn-row">
+          <a href="#services" class="btn-primary">事業を見る</a>
+          <a href="#contact" class="btn-secondary">お問い合わせ →</a>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-line"></div>
+          SCROLL
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading" class="section-label fade">Services</h2>
+      <div class="services-grid">
+        <article class="service-card fade">
+          <p class="card-num">01</p>
+          <h3 class="card-title">Gritters Intern</h3>
+          <p class="card-desc">やり切る覚悟がある学生と、学生の成長を本気で望む企業をつなぐ成果報酬型プラットフォーム。採用確定まで費用ゼロ。</p>
+          <div class="card-tags">
+            <span class="tag">企業向け</span>
+            <span class="tag">学生向け</span>
+            <span class="tag">成果報酬</span>
+          </div>
+          <div class="card-links">
+            <a href="https://lp.gritters.jp" target="_blank" rel="noopener noreferrer" class="card-link">
+              <span class="card-link-label">企業向けLP</span>lp.gritters.jp ↗
+            </a>
+            <a href="https://intern.gritters.jp" target="_blank" rel="noopener noreferrer" class="card-link">
+              <span class="card-link-label">学生向け求人</span>intern.gritters.jp ↗
+            </a>
+          </div>
+        </article>
+        <article class="service-card fade">
+          <p class="card-num">02</p>
+          <h3 class="card-title">CAPS</h3>
+          <p class="card-desc">早慶・MARCH・日東駒専・関関同立、12万人以上の大学別学生コミュニティ。LINE・Instagramで企業と学生をダイレクトに繋ぐ。</p>
+          <div class="card-tags">
+            <span class="tag">12万人+</span>
+            <span class="tag">15大学+</span>
+            <span class="tag">LINE / IG</span>
+          </div>
+          <div class="card-links">
+            <a href="https://campanion.jp" target="_blank" rel="noopener noreferrer" class="card-link">
+              <span class="card-link-label">学生向け</span>campanion.jp ↗
+            </a>
+            <a href="https://campanion.jp/corp" target="_blank" rel="noopener noreferrer" class="card-link">
+              <span class="card-link-label">企業向け</span>campanion.jp/corp ↗
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" aria-labelledby="news-heading">
+      <h2 id="news-heading" class="section-label fade">News</h2>
+      <div id="news-list" class="fade" aria-live="polite">
+        <p class="news-empty">読み込み中...</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="section-label fade">Contact</h2>
+      <p class="cta-title fade">共に、やり切る人間を増やしませんか。</p>
+      <p class="cta-sub fade">目的に合わせてお問い合わせください。</p>
+      <div class="contact-grid fade">
+        <a href="https://lp.gritters.jp/#contact" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card-label">企業の方</span>
+          <span class="contact-card-title">Gritters Intern 導入相談</span>
+          <span class="contact-card-desc">インターン採用・学生採用に関するご相談はこちら。</span>
+          <span class="contact-card-link">lp.gritters.jp ↗</span>
+        </a>
+        <a href="https://campanion.jp/corp#contact" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card-label">広告・PR</span>
+          <span class="contact-card-title">CAPS 広告・PR配信</span>
+          <span class="contact-card-desc">学生12万人へのLINE・Instagram配信に関するご相談。</span>
+          <span class="contact-card-link">campanion.jp/corp ↗</span>
+        </a>
+        <a href="https://forms.gle/ckvWA4mJ9an3GUz89" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-card-label">投資家・メディア・提携</span>
+          <span class="contact-card-title">その他のご相談</span>
+          <span class="contact-card-desc">取材・業務提携・投資家の方はこちらからお問い合わせください。</span>
+          <span class="contact-card-link">forms.gle ↗</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-logo">GRITTERS</span>
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <a href="#services">Services</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="footer-copy">© 2026 株式会社Gritters</span>
+  </footer>
+
+  <script>
+    /* ── カスタムカーソル ── */
+    const cursor = document.getElementById('cursor');
+    const ring   = document.getElementById('cursorRing');
+    let rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+      rx += (e.clientX - rx) * 0.12;
+      ry += (e.clientY - ry) * 0.12;
+      ring.style.left = e.clientX + 'px';
+      ring.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '16px'; cursor.style.height = '16px';
+        ring.style.width = '56px'; ring.style.height = '56px';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '8px'; cursor.style.height = '8px';
+        ring.style.width = '36px'; ring.style.height = '36px';
+      });
+    });
+
+    /* ── スクロールでNavコンパクト化 ── */
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      mainNav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── フェードイン ── */
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); }
+      }),
+      { threshold: 0.06 }
+    );
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+    /* ── 数字カウントアップ ── */
+    function countUp(el, target, duration = 1800) {
+      const suffix = el.querySelector('span') ? el.querySelector('span').outerHTML : '';
+      const isLarge = target >= 1000;
+      let start = null;
+      const step = ts => {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+        const display = isLarge
+          ? (current >= 10000 ? Math.floor(current / 1000) + '万' : current.toLocaleString())
+          : current;
+        el.innerHTML = display + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.innerHTML = (isLarge ? Math.floor(target / 10000) + '万' : target) + suffix;
+      };
+      requestAnimationFrame(step);
+    }
+
+    const statObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const nums = e.target.querySelectorAll('[data-target]');
+          nums.forEach(el => {
+            const target = parseInt(el.dataset.target);
+            setTimeout(() => countUp(el, target), 400);
+          });
+          statObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.hero-stats').forEach(el => statObserver.observe(el));
+
+    /* ── モバイルメニュー ── */
+    function toggleMenu(btn) {
+      const open = btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      document.getElementById('nav-drawer').classList.toggle('open', open);
+    }
+    function closeMenu() {
+      const btn = document.querySelector('.nav-hamburger');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+      document.getElementById('nav-drawer').classList.remove('open');
+    }
+
+    /* ── News JSON ── */
+    // fetchが失敗した時のフォールバック（ローカルfile://環境用）
+    const NEWS_FALLBACK = [
+      {
+        "date": "2025-12-01",
+        "category": "お知らせ",
+        "title": "Gritters Intern、サービス正式開始のお知らせ",
+        "url": "#"
+      }
+    ];
+
+    function renderNews(items) {
+      const list = document.getElementById('news-list');
+      if (!items.length) {
+        list.innerHTML = '<p class="news-empty">現在お知らせはありません。</p>';
+        return;
+      }
+      const esc = s => String(s).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+      list.innerHTML = items.map(item => {
+        const url = item.url && item.url !== '#' ? item.url : null;
+        const tag  = url ? 'a' : 'div';
+        const href = url ? ` href="${url}"` : '';
+        return `<${tag}${href} class="news-item">
+          <span class="news-date">${esc(item.date)}</span>
+          <span class="news-cat">${esc(item.category)}</span>
+          <span class="news-title">${esc(item.title)}</span>
+          <span class="news-arrow">→</span>
+        </${tag}>`;
+      }).join('');
+      list.querySelectorAll('.news-item').forEach(el => observer.observe(el));
+    }
+
+    fetch('./news.json')
+      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(items => renderNews(items))
+      .catch(() => renderNews(NEWS_FALLBACK));
+  </script>
+</body>
+</html>
