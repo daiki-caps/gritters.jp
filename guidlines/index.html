@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オープンチャット ガイドライン | Gritters Intern</title>
+  <meta name="description" content="Gritters運営オープンチャットのガイドライン。安心して使えるコミュニティのためのルールと、長期インターンの探し方。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gritters.jp/gudilines/">
+  <meta property="og:title" content="【必読】オープンチャット ガイドライン | Gritters Intern">
+  <meta property="og:description" content="安心して使えるコミュニティのためのルール。あわせて、長期・有給インターンの探し方もこちらから。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gritters.jp/gudilines/">
+  <meta property="og:image" content="https://gritters.jp/gudilines/images/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="【必読】オープンチャット ガイドライン | Gritters Intern">
+  <meta name="twitter:image" content="https://gritters.jp/gudilines/images/ogp.png">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; color: #14110F; background: #fff; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    :root {
+      --red: #DA0101; --red-dark: #A60101; --red-tint: #FCE9E9;
+      --ink: #14110F; --muted: #6b6663;
+      --line: #ECE7E3; --r: 14px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 100;
+      height: 64px; padding: 0 5vw;
+      display: flex; align-items: center; gap: .9rem;
+      background: rgba(255,255,255,.94); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 30px; width: auto; display: block; }
+    .nav-doctype { font-family: 'DM Sans', sans-serif; font-size: .65rem; font-weight: 700; letter-spacing: .12em; color: var(--muted); border-left: 1px solid var(--line); padding-left: .8rem; margin-left: .2rem; }
+    .nav-back { margin-left: auto; display: inline-flex; align-items: center; gap: .35rem; font-size: .78rem; font-weight: 700; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 16px; transition: background .2s, color .2s; white-space: nowrap; }
+    .nav-back:hover { background: var(--ink); color: #fff; }
+
+    /* HEADER */
+    .ghead { padding: 130px 5vw 4rem; background: #fff; position: relative; overflow: hidden; }
+    .ghead::before {
+      content: ''; position: absolute; top: -120px; right: -120px; width: 420px; height: 420px;
+      background: var(--red); opacity: .08; border-radius: 50%; pointer-events: none;
+    }
+    .ghead-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: flex-start; gap: 2.5rem; position: relative; z-index: 1; }
+    .ghead-text { max-width: 620px; }
+    .ghead-img { flex: none; width: 170px; padding-top: .5rem; }
+    .ghead-img img { width: 100%; }
+    .tag { display: inline-flex; align-items: center; gap: .4rem; font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .14em; color: var(--red); text-transform: uppercase; margin-bottom: 1.1rem; }
+    .tag::before { content: ''; width: 18px; height: 2px; background: var(--red); border-radius: 2px; }
+    .ghead-title { font-size: clamp(1.7rem, 4.2vw, 2.5rem); font-weight: 900; line-height: 1.4; letter-spacing: -.01em; margin-bottom: 1rem; }
+    .ghead-title .accent { color: var(--red); }
+    .ghead-updated { font-family: 'DM Sans', sans-serif; font-size: .72rem; color: var(--muted); margin-bottom: 1.6rem; }
+    .ghead-body { font-size: .93rem; color: #43403d; line-height: 2; margin-bottom: 1.2rem; }
+    .ghead-note { font-size: .78rem; color: var(--muted); border-left: 3px solid var(--red-tint); padding-left: .9rem; line-height: 1.9; }
+
+    /* SHARED */
+    .inner-md { max-width: 720px; margin: 0 auto; }
+    .sec-tag { display: inline-flex; align-items: center; gap: .4rem; font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .14em; color: var(--red); text-transform: uppercase; margin-bottom: .9rem; }
+    .sec-tag::before { content: ''; width: 18px; height: 2px; background: var(--red); border-radius: 2px; }
+    .sec-title { font-size: clamp(1.4rem, 2.8vw, 1.85rem); font-weight: 900; line-height: 1.4; letter-spacing: -.01em; margin-bottom: .5rem; }
+    .sec-sub { font-size: .87rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.8rem; }
+
+    /* INLINE STRIP CTA (lightweight, repeatable) */
+    .strip { background: #fff; padding: 1.6rem 5vw; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .strip-inner { max-width: 720px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .strip-text { font-size: .83rem; font-weight: 700; color: var(--ink); }
+    .strip-text span { color: var(--red); }
+    .strip-link { display: inline-flex; align-items: center; gap: .3rem; font-size: .78rem; font-weight: 700; color: var(--red); white-space: nowrap; }
+    .strip-link:hover { color: var(--red-dark); }
+
+    /* OPERATION */
+    .op { padding: 4.5rem 5vw; background: #fff; }
+    .op-row { display: flex; align-items: center; gap: 2rem; }
+    .op-img { flex: none; width: 130px; }
+    .op-img img { width: 100%; }
+    .op-card { flex: 1; background: #FAFAF9; border-radius: var(--r); padding: 1.6rem 1.7rem; border: 1px solid var(--line); }
+    .op-card p { font-size: .88rem; color: var(--ink); line-height: 1.9; }
+    .op-card p + p { margin-top: .6rem; }
+
+    /* RULES */
+    .rules { background: var(--red-tint); padding: 4.5rem 5vw; }
+    .rule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .rule-card { background: #fff; border-radius: var(--r); padding: 1.4rem 1.5rem; border: 1px solid #f6cccc; display: flex; gap: .9rem; align-items: flex-start; }
+    .rule-num { flex: none; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: .8rem; color: var(--red); width: 26px; height: 26px; border-radius: 50%; background: var(--red-tint); display: flex; align-items: center; justify-content: center; }
+    .rule-text { font-size: .87rem; color: var(--ink); line-height: 1.75; padding-top: .2rem; }
+    .rule-text b { font-weight: 700; }
+    .rule-note { font-size: .76rem; color: var(--muted); margin-top: .3rem; }
+
+    /* ENFORCEMENT (bold black band) */
+    .enforce { background: var(--ink); padding: 4.5rem 5vw; position: relative; overflow: hidden; }
+    .enforce::before { content: ''; position: absolute; top: -90px; left: -90px; width: 300px; height: 300px; background: var(--red); opacity: .12; border-radius: 50%; }
+    .enforce-inner { position: relative; z-index: 1; }
+    .enforce .sec-tag { color: #ff8585; }
+    .enforce .sec-tag::before { background: #ff8585; }
+    .enforce .sec-title { color: #fff; }
+    .enforce-body { font-size: .9rem; color: rgba(255,255,255,.65); line-height: 2; margin-bottom: 1.3rem; }
+    .enforce-pill { display: inline-flex; align-items: center; gap: .4rem; background: rgba(218,1,1,.16); border: 1px solid rgba(218,1,1,.5); color: #ff8585; border-radius: 999px; font-size: .78rem; font-weight: 700; padding: 7px 18px; }
+
+    /* REPORT */
+    .report { padding: 4.5rem 5vw; background: #fff; }
+    .report-card { background: #FAFAF9; border-radius: var(--r); padding: 1.6rem 1.7rem; border: 1px solid var(--line); display: flex; gap: 1rem; align-items: flex-start; }
+    .report-icon { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; }
+    .report-card p { font-size: .87rem; color: var(--ink); line-height: 1.9; }
+    .report-card p + p { margin-top: .5rem; color: var(--muted); font-size: .82rem; }
+
+    /* CTA + RETURN */
+    .gback { padding: 3.5rem 5vw 4.5rem; background: #fff; display: flex; flex-direction: column; gap: 1rem; }
+    .promo { max-width: 720px; margin: 0 auto; width: 100%; background: var(--ink); border-radius: var(--r); padding: 2rem 2.1rem; position: relative; overflow: hidden; }
+    .promo::before { content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: var(--red); opacity: .18; border-radius: 50%; }
+    .promo-inner { position: relative; z-index: 1; }
+    .promo-tag { display: inline-flex; align-items: center; gap: .4rem; font-family: 'DM Sans', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .14em; color: #ff8585; text-transform: uppercase; margin-bottom: .8rem; }
+    .promo-tag::before { content: ''; width: 16px; height: 2px; background: #ff8585; border-radius: 2px; }
+    .promo-title { font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 900; color: #fff; line-height: 1.5; margin-bottom: .7rem; }
+    .promo-body { font-size: .85rem; color: rgba(255,255,255,.65); line-height: 1.9; margin-bottom: 1.2rem; max-width: 480px; }
+    .promo-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+    .promo-chip { font-size: .76rem; font-weight: 700; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 6px 14px; }
+    .gback-card { max-width: 720px; margin: 0 auto; width: 100%; border-radius: var(--r); padding: 1.7rem 1.9rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .gback-card.is-contact { background: var(--red-tint); border: 1px solid #f6cccc; }
+    .gback-card p { font-size: .85rem; font-weight: 700; }
+    .gback-card.is-contact p { color: var(--ink); }
+    .gback-btn { display: inline-flex; align-items: center; gap: .4rem; border-radius: 999px; padding: 11px 24px; font-size: .82rem; font-weight: 700; transition: transform .15s, background .2s; white-space: nowrap; }
+    .gback-btn:hover { transform: translateY(-1px); }
+    .gback-btn.is-intern { background: var(--red); color: #fff; }
+    .gback-btn.is-intern:hover { background: var(--red-dark); }
+    .gback-btn.is-contact { background: var(--ink); color: #fff; }
+    .gback-btn.is-contact:hover { background: #2b2724; }
+    @media (max-width: 480px) { .gback-card { flex-direction: column; align-items: flex-start; } .promo { padding: 1.6rem 1.5rem; } }
+
+    .signoff { text-align: center; font-size: .78rem; color: var(--muted); padding-bottom: 1rem; }
+    .revision { text-align: center; font-size: .74rem; color: var(--muted); opacity: .85; line-height: 1.8; max-width: 560px; margin: 0 auto; padding-bottom: 3rem; }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 3rem 5vw 2rem; text-align: center; }
+    .footer-copy { font-size: .7rem; color: rgba(255,255,255,.3); }
+    .footer-back { font-size: .78rem; color: #ff8585; display: inline-block; margin-bottom: 1.2rem; font-weight: 700; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
+
+    @media (max-width: 768px) {
+      .ghead { padding: 100px 6vw 3rem; }
+      .op, .rules, .enforce, .report { padding: 3.5rem 6vw; }
+      .gback { padding: 2.5rem 6vw 3.5rem; }
+
+      .nav-doctype { display: none; }
+      .nav-back { font-size: .72rem; padding: 6px 13px; }
+      .strip { padding: 1.3rem 6vw; }
+      .strip-text { font-size: .78rem; }
+
+      .rule-grid { grid-template-columns: 1fr; gap: .8rem; }
+      .rule-card { padding: 1.2rem 1.3rem; }
+
+      .ghead-inner { flex-direction: column-reverse; gap: 1.5rem; }
+      .ghead-img { width: 110px; align-self: center; }
+      .op-row { flex-direction: column; }
+      .op-img { width: 100px; align-self: center; }
+    }
+
+    @media (max-width: 480px) {
+      nav { padding: 0 5vw; }
+      .nav-back { font-size: .68rem; padding: 6px 11px; }
+
+      .ghead { padding: 90px 5vw 2.6rem; }
+      .ghead-title { font-size: 1.55rem; }
+      .ghead-body, .enforce-body, .sec-sub { font-size: .85rem; }
+      .ghead-note { font-size: .73rem; }
+
+      .op, .rules, .enforce, .report { padding: 3rem 5vw; }
+      .op-card, .report-card { padding: 1.3rem 1.4rem; }
+
+      .gback { padding: 2rem 5vw 3rem; gap: .8rem; }
+      .gback-card { flex-direction: column; align-items: flex-start; padding: 1.2rem 1.3rem; }
+      .gback-btn { width: 100%; justify-content: center; }
+
+      .enforce-pill { font-size: .73rem; padding: 6px 14px; }
+
+      .ghead-img { width: 90px; }
+      .op-img { width: 80px; }
+
+      footer { padding: 2.5rem 5vw 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="https://intern.gritters.jp/" class="nav-logo">
+    <img src="images/logo.png" alt="GRITTERS">
+  </a>
+  <span class="nav-doctype">GUIDELINE</span>
+  <a class="nav-back" href="https://intern.gritters.jp/" target="_top">← Gritters Internへ</a>
+</nav>
+
+<header class="ghead">
+  <div class="ghead-inner">
+    <div class="ghead-text">
+      <p class="tag reveal">GUIDELINE</p>
+      <h1 class="ghead-title reveal d1">やり切る場を、<br><span class="accent">みんな</span>で守る。</h1>
+      <p class="ghead-updated reveal d1">Last updated — 2026.06.20</p>
+      <p class="ghead-body reveal d2">
+        Gritters運営のオープンチャットは、長期インターンに本気で取り組む学生のための場です。<br><br>
+        業界・職種別に100以上のグループを展開し、求人案件のご案内や学生同士の情報交換を行っています。<br><br>
+        安心して使える場であるために、参加する前に必ず以下をご確認ください。
+      </p>
+      <p class="ghead-note reveal d3">※本オープンチャットは株式会社Grittersが運営する学生・企業向けコミュニティです。各グループの参加は無料・任意です。</p>
+    </div>
+    <div class="ghead-img reveal d2">
+      <img src="images/illust-students.svg" alt="Grittersのイメージ">
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="strip-inner">
+    <p class="strip-text"><span>長期インターン</span>を探すなら、Gritters。</p>
+    <a class="strip-link" href="https://intern.gritters.jp/" target="_top">Gritters Internを見る →</a>
+  </div>
+</div>
+
+<section class="op">
+  <div class="inner-md">
+    <p class="sec-tag reveal">ABOUT THE OPERATION</p>
+    <h2 class="sec-title reveal d1">運営について</h2>
+    <p class="sec-sub reveal d1">本コミュニティは株式会社Grittersが運営しています。</p>
+    <div class="op-row reveal d2">
+      <div class="op-img">
+        <img src="images/illust-team.svg" alt="運営チームのイメージ">
+      </div>
+      <div class="op-card">
+        <p>業界・職種別に複数のグループを設けており、現在100以上のグループを展開しています。</p>
+        <p>各グループでは、運営からの求人案件・イベント案内のほか、参加学生同士の情報交換を行っています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rules">
+  <div class="inner-md">
+    <p class="sec-tag reveal">RULES</p>
+    <h2 class="sec-title reveal d1">禁止事項</h2>
+    <p class="sec-sub reveal d1">以下の投稿・行為を禁止します。</p>
+    <div class="rule-grid">
+      <div class="rule-card reveal d1">
+        <span class="rule-num">01</span>
+        <div>
+          <p class="rule-text"><b>運営許可のない宣伝・告知・勧誘</b></p>
+          <p class="rule-note">運営による正規の求人案件・イベント案内を除きます</p>
+        </div>
+      </div>
+      <div class="rule-card reveal d2">
+        <span class="rule-num">02</span>
+        <div>
+          <p class="rule-text"><b>なりすまし・偽の求人案件の投稿</b></p>
+          <p class="rule-note">運営を名乗る、または実在しない企業・案件の案内</p>
+        </div>
+      </div>
+      <div class="rule-card reveal d1">
+        <span class="rule-num">03</span>
+        <p class="rule-text"><b>宗教・マルチ・投資等の勧誘</b></p>
+      </div>
+      <div class="rule-card reveal d2">
+        <span class="rule-num">04</span>
+        <p class="rule-text"><b>出会い目的の利用</b></p>
+      </div>
+      <div class="rule-card reveal d1">
+        <span class="rule-num">05</span>
+        <p class="rule-text"><b>誹謗中傷・荒らし・不快な言動</b></p>
+      </div>
+      <div class="rule-card reveal d2">
+        <span class="rule-num">06</span>
+        <div>
+          <p class="rule-text"><b>他者の個人情報の無断公開</b></p>
+          <p class="rule-note">スクリーンショット等による晒し行為を含む</p>
+        </div>
+      </div>
+      <div class="rule-card reveal d1" style="grid-column: 1 / -1;">
+        <span class="rule-num">07</span>
+        <p class="rule-text"><b>法令に違反する行為、その他公序良俗に反する行為</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <p class="strip-text">就活、何から始める？<span>まずは長期インターンから。</span></p>
+    <a class="strip-link" href="https://intern.gritters.jp/" target="_top">求人を探してみる →</a>
+  </div>
+</div>
+
+<section class="enforce">
+  <div class="inner-md enforce-inner">
+    <p class="sec-tag reveal">ENFORCEMENT</p>
+    <h2 class="sec-title reveal d1">違反時の対応</h2>
+    <p class="enforce-body reveal d2">禁止事項への違反が確認された場合、運営の判断により投稿の削除・強制退会の対応を行います。</p>
+    <span class="enforce-pill reveal d2">⚠ 強制退会後の再参加はできません</span>
+  </div>
+</section>
+
+<section class="report">
+  <div class="inner-md">
+    <p class="sec-tag reveal">REPORT</p>
+    <h2 class="sec-title reveal d1">違反を見かけたら</h2>
+    <div class="report-card reveal d2">
+      <span class="report-icon">@</span>
+      <div>
+        <p>気になる投稿やトラブルを見かけた場合は、トークルーム内で管理人をメンションしてお知らせください。</p>
+        <p class="report-sub">運営が内容を確認のうえ、必要な対応を行います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gback">
+  <div class="promo reveal d1">
+    <div class="promo-inner">
+      <p class="promo-tag">Gritters Intern</p>
+      <p class="promo-title">就活、何から始めればいいか悩んでるなら。<br>まずは、長期インターンから。</p>
+      <p class="promo-body">Gritters Internなら、長期・有給インターン求人を業界・職種別に検索できます。「やり切る経験」を積める環境が、ここにあります。</p>
+      <div class="promo-chips">
+        <span class="promo-chip">長期・有給</span>
+        <span class="promo-chip">業界多数</span>
+        <span class="promo-chip">未経験OK</span>
+        <span class="promo-chip">週2日〜OK</span>
+      </div>
+      <a class="gback-btn is-intern" href="https://intern.gritters.jp/" target="_top">Gritters Internで求人を見る →</a>
+    </div>
+  </div>
+  <div class="gback-card is-contact reveal d2">
+    <p>ご質問・ご相談はこちらから。</p>
+    <a class="gback-btn is-contact" href="https://forms.gle/kCZ2ocShsum4DUnz6" target="_blank" rel="noopener">お問い合わせフォームへ →</a>
+  </div>
+</section>
+
+<p class="signoff">Gritters運営</p>
+<p class="revision">※本ガイドラインは、コミュニティの状況に応じて予告なく内容を変更することがあります。最新の内容は本ページにてご確認ください。</p>
+
+<footer>
+  <a class="footer-back" href="https://intern.gritters.jp/" target="_top">← Gritters Internへ戻る</a><br>
+  <p class="footer-copy">© 2026 株式会社Gritters</p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
